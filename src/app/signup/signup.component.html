@@ -3,25 +3,54 @@
         <h2>Signup</h2>
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
             <div class="user-box">
-                <input type="text" name="firstName" required="" />
+                <input type="text" formControlName="firstName" required="" />
                 <label>First Name</label>
+                <div
+                    *ngIf="submitted && f.firstName.errors && f.firstName.errors.required"
+                    class="form-error"
+                >
+                    * First Name is required
+                </div>
             </div>
             <div class="user-box">
-                <input type="text" name="lastName" required="" />
+                <input type="text" formControlName="lastName" required="" />
                 <label>Last Name</label>
+                <div
+                    *ngIf="submitted && f.lastName.errors && f.lastName.errors.required"
+                    class="form-error"
+                >
+                    * Last Name is required
+                </div>
             </div>
             <div class="user-box">
-                <input type="text" name="userName" required="" />
+                <input type="text" formControlName="userName" required="" />
                 <label>User Name</label>
+                <div
+                    *ngIf="submitted && f.userName.errors && f.userName.errors.required"
+                    class="form-error"
+                >
+                    * User Name is required
+                </div>
             </div>
             <div class="user-box">
-                <input type="password" name="password" required="" />
+                <input type="password" formControlName="password" required="" />
                 <label>Password</label>
+                <div
+                    *ngIf="submitted && f.password.errors && f.password.errors.required"
+                    class="form-error"
+                    style="margin-bottom: 0px"
+                >
+                    * Password is required
+                </div>
+                <div
+                    *ngIf="submitted && f.password.errors && f.password.errors.minlength"
+                    class="form-error"
+                >
+                    * Password must be at least 6 characters
+                </div>
             </div>
-            <button>Submit</button>
-            <a routerLink="/login" style="margin-left: 20px" href="#">
-                Login
-            </a>
+            <a (click)="onSubmit()">Submit</a>
+            <a routerLink="/login" style="margin-left: 20px"> Login </a>
         </form>
     </div>
 </div>
