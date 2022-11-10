@@ -8,20 +8,18 @@ import { loginComponent } from './login/login.component'
 import { HomeComponent } from './home/home.component'
 import { SignupComponent } from './signup/signup.component'
 import { ReactiveFormsModule } from '@angular/forms'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { DeleteComponent } from './delete/delete.component'
 
 @NgModule({
     imports: [
         BrowserModule,
         appRoutingModule,
         HttpClientModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        BrowserAnimationsModule
     ],
-    declarations: [
-        AppComponent,
-        loginComponent,
-        HomeComponent,
-        SignupComponent
-    ],
+    declarations: [AppComponent, loginComponent, HomeComponent, SignupComponent, DeleteComponent],
     providers: [],
     bootstrap: [AppComponent]
 })

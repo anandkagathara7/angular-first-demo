@@ -1,0 +1,12 @@
+<div class="center">
+    <h1>Delete User</h1>
+    <form [formGroup]="deleteForm" (ngSubmit)="onDelete()">
+        <div class="inputbox">
+            <input type="text" required="required">
+            <span>Username</span>
+        </div>
+        <div class="inputbox">
+            <input type="button" value="Delete" (click)="onDelete()">
+        </div>
+    </form>
+</div>

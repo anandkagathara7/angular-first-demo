@@ -5,39 +5,29 @@
 			<div class="user-box">
 				<input type="text" formControlName="userName" required="" />
 				<label>Username</label>
-				<div
-					*ngIf="
-						submitted &&
+				<div *ngIf="
+					 	submitted &&
 						f.userName.errors &&
 						f.userName.errors.required
-					"
-					class="form-error"
-				>
+					" class="form-error">
 					* User Name is required
 				</div>
 			</div>
 			<div class="user-box">
 				<input type="password" formControlName="password" required="" />
 				<label>Password</label>
-				<div
-					*ngIf="
+				<div *ngIf="
 						submitted &&
 						f.password.errors &&
 						f.password.errors.required
-					"
-					class="form-error"
-					style="margin-bottom: 0px"
-				>
+					" class="form-error" style="margin-bottom: 0px">
 					* Password is required
 				</div>
-				<div
-					*ngIf="
+				<div *ngIf="
 						submitted &&
 						f.password.errors &&
 						f.password.errors.minlength
-					"
-					class="form-error"
-				>
+					" class="form-error">
 					* Password must be at least 6 characters
 				</div>
 			</div>
